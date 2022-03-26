@@ -7,6 +7,8 @@ public class HPandTimer : MonoBehaviour
 {
     [SerializeField]
     private Text Timertext;
+    [SerializeField]
+    private Text HPText;
     private int timer = 181;
     private int HP = 100;
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class HPandTimer : MonoBehaviour
     }
    void Update()
     {
-        Timertext.text = "Timer = " + timer;        
+        Timertext.text = "Timer = " + timer;
+        HPText.text = HP + " HP";
     }
 }
