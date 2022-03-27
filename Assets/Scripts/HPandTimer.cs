@@ -32,6 +32,7 @@ public class HPandTimer : MonoBehaviour
         StartCoroutine(TimingSystem());
         Timertext.gameObject.SetActive(true);
         HPText.gameObject.SetActive(true);
+        StartButton.gameObject.SetActive(false);
     }
     IEnumerator TimingSystem()
     {
