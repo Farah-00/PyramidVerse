@@ -7,17 +7,32 @@ public class HPandTimer : MonoBehaviour
 {
     [SerializeField]
     private Text Timertext;
+
     [SerializeField]
     private Text HPText;
+
+    [SerializeField]
+    private Button StartButton;
+
     private int timer = 181;
     private int HP = 100;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(TimingSystem());
+        Button btn = StartButton.GetComponent<Button>();
+        btn.onClick.AddListener(Started);
+        Timertext.gameObject.SetActive(false);
+        HPText.gameObject.SetActive(false);
+        
     }
 
-    // Update is called once per frame
+    void Started()
+    {
+        StartCoroutine(TimingSystem());
+        Timertext.gameObject.SetActive(true);
+        HPText.gameObject.SetActive(true);
+    }
     IEnumerator TimingSystem()
     {
         while (true)
